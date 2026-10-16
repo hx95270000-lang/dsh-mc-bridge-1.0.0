@@ -1,0 +1,56 @@
+{
+  "name": "dsh-minecraft-agent",
+  "version": "1.1.0",
+  "description": "Minecraft agent for DSH: drive a real 1.20.1 Forge client over a localhost bridge — chat, gather modded blocks by registry name, build, and work the client GUI.",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "minecraft",
+    "forge",
+    "agent",
+    "bot",
+    "modded"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "meta": {
+    "title": "Minecraft 智能体",
+    "description": "让智能体进入 Minecraft 1.20.1 Forge 世界：与玩家聊天、按真实注册名采集模组物品、搭建建筑、放置/破坏方块、操作客户端界面。"
+  },
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./plugin.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "plugin.js",
+    "lib",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "optionalDependencies": {
+    "mineflayer": "4.39.0",
+    "mineflayer-pathfinder": "2.4.5",
+    "prismarine-chat": "1.13.0",
+    "prismarine-nbt": "2.8.0",
+    "vec3": "0.1.10"
+  },
+  "devDependencies": {
+    "minecraft-data": "3.117.0",
+    "minecraft-protocol": "1.68.0"
+  }
+}

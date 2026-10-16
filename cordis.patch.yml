@@ -1,0 +1,12 @@
+- insert:
+    - id: mc-bot
+      # Must be the published package name: the Loader resolves this specifier
+      # from the profile directory, where the bundle is installed under its own
+      # name.
+      name: dsh-minecraft-agent
+      config:
+        defaultUsername: SkyAgent
+        defaultVersion: '1.20.1'
+        defaultAuth: offline
+        maxLogLines: 400
+        autoConnect: ''

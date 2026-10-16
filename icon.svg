@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Minecraft agent">
+  <defs>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7cc45a"/>
+      <stop offset="1" stop-color="#5aa03c"/>
+    </linearGradient>
+    <linearGradient id="dirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9c6b43"/>
+      <stop offset="1" stop-color="#7a5233"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#1f2937"/>
+  <!-- isometric grass block -->
+  <g transform="translate(32 34)">
+    <path d="M0 -14 L14 -6 L0 2 L-14 -6 Z" fill="url(#grass)"/>
+    <path d="M-14 -6 L0 2 L0 16 L-14 8 Z" fill="#8a5c3a"/>
+    <path d="M14 -6 L0 2 L0 16 L14 8 Z" fill="#6f4a2e"/>
+    <path d="M-14 -6 L0 -14 L0 -10 L-14 -2 Z" fill="#94d16f" opacity="0.5"/>
+  </g>
+  <!-- chat bubble: the agent talks -->
+  <g transform="translate(40 14)">
+    <rect x="0" y="0" width="20" height="13" rx="4" fill="#e5e7eb"/>
+    <path d="M4 13 L8 13 L5 18 Z" fill="#e5e7eb"/>
+    <circle cx="6" cy="6.5" r="1.5" fill="#4b5563"/>
+    <circle cx="10" cy="6.5" r="1.5" fill="#4b5563"/>
+    <circle cx="14" cy="6.5" r="1.5" fill="#4b5563"/>
+  </g>
+</svg>
