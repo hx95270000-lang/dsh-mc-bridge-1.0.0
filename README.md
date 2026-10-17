@@ -45,9 +45,9 @@
 
 ## 二、装插件（DSH 侧）
 1. 插件以 npm 包 dsh-minecraft-agent 的形式发布，package.json 里声明了 dsh.bundle.patch，所以 DSH 的插件管理器能把它当作一个 profile bundle 安装、启用、卸载。
-2.# 一条命令装进当前 profile（需要 danger-full-access 或本次批准）
+2. 一条命令装进当前 profile（需要 danger-full-access 或本次批准）
 plugin_manager action=install_bundle target=dsh-minecraft-agent
-# 也可以直接给本地 tarball 或绝对路径：
+   也可以直接给本地 tarball 或绝对路径：
 plugin_manager action=install_bundle target=D:/share/dsh-minecraft-agent-1.1.0.tgz
 
 3. **重启 DSH Desktop**（必须：Loader/ESM 会缓存已加载的模块，改完文件不重启不会生效）
