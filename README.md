@@ -44,30 +44,11 @@
 ---
 
 ## 二、装插件（DSH 侧）
-
-1. 把 `dsh-minecraft-agent` 整个文件夹放到任意位置，例如 `D:\dsh\minecraft-agent`
-2. 编辑 `%USERPROFILE%\.dsh\profiles\desktop\package.json`：
-
-   ```json
-   {
-     "dsh": {
-       "profile": {
-         "bundles": [
-           "@deepseek-ai/dsh-base",
-           "@deepseek-ai/dsh-web-app",
-           "@local/dsh-minecraft-agent"
-         ]
-       }
-     },
-     "dependencies": {
-       "@local/dsh-minecraft-agent": "link:D:/dsh/minecraft-agent"
-     }
-   }
-   ```
-
-   - `bundles` 里加一项 `"@local/dsh-minecraft-agent"`
-   - `dependencies` 里把它指向你放文件夹的位置（Windows 路径写成 `link:D:/dsh/minecraft-agent` 或 `link:C:/Users/你/...`）
-   - `cordis.patch.yml` 是插件自带的 bundle patch（负责插入 `mc-bot` 条目），跟着文件夹一起复制，不用改
+1. 插件以 npm 包 dsh-minecraft-agent 的形式发布，package.json 里声明了 dsh.bundle.patch，所以 DSH 的插件管理器能把它当作一个 profile bundle 安装、启用、卸载。
+2.# 一条命令装进当前 profile（需要 danger-full-access 或本次批准）
+plugin_manager action=install_bundle target=dsh-minecraft-agent
+# 也可以直接给本地 tarball 或绝对路径：
+plugin_manager action=install_bundle target=D:/share/dsh-minecraft-agent-1.1.0.tgz
 
 3. **重启 DSH Desktop**（必须：Loader/ESM 会缓存已加载的模块，改完文件不重启不会生效）
 4. 验证：对 DSH 说一句「看看 Minecraft 状态」，应当出现 `mc_state` 工具；重启后再确认 `mc_state` 返回 `status: idle`
